@@ -1,0 +1,33 @@
+from pulp import *
+
+# Create the optimization problem
+prob = LpProblem("Furniture_Production_Optimization", LpMaximize)
+
+# Define decision variables
+chairs = LpVariable("Chairs", 0, None, LpInteger)  # Number of chairs to produce
+tables = LpVariable("Tables", 0, None, LpInteger)  # Number of tables to produce
+
+# Define objective function (maximize profit)
+prob += 60 * chairs + 100 * tables, "Profit"
+
+# Define constraints
+prob += 2 * chairs + 4 * tables <= 100, "Labor_Constraint"
+prob += 20 * chairs + 30 * tables <= 800, "Wood_Constraint"
+
+# Solve the problem
+prob.solve()
+
+# Print results
+print("Status:", LpStatus[prob.status])
+print("\nOptimal Production Plan:")
+print(f"Chairs to produce: {value(chairs)}")
+print(f"Tables to produce: {value(tables)}")
+print(f"\nTotal Profit: ${value(prob.objective)}")
+
+# Print resource utilization
+labor_used = 2 * value(chairs) + 4 * value(tables)
+wood_used = 20 * value(chairs) + 30 * value(tables)
+
+print("\nResource Utilization:")
+print(f"Labor used: {labor_used} hours out of 100 hours")
+print(f"Wood used: {wood_used} sq ft out of 800 sq ft")
