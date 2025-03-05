@@ -56,4 +56,6 @@ The project utilizes various resources across different components:
 All components demonstrate careful resource management and efficient utilization patterns, with clear constraints and optimization strategies in place.
 Based on the project files, the main libraries used are: 1) PuLP for linear programming optimization, 2) PyTorch and torchvision for deep learning and image classification, 3) scikit-learn for machine learning components including preprocessing and metrics, 4) pandas and numpy for data manipulation, 5) matplotlib and seaborn for data visualization. These libraries form a comprehensive stack for implementing optimization, machine learning, and data processing functionalities in the project.
 
-OUTPUT 
+OUTPUT  
+![Image](https://github.com/user-attachments/assets/deac88d0-f096-45dc-ae29-54c0b4d2cb1f)
+![Image](https://github.com/user-attachments/assets/c14fb337-f59d-4e0c-b649-772e1fbadfa6)
